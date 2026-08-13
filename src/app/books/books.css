@@ -1,0 +1,304 @@
+.books-section {
+  padding: 110px 8%;
+  background: #f8f7ff;
+}
+
+.books-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+
+  color: #6d28d9;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+.section-description {
+  margin-top: 18px;
+
+  color: #6b7280;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* ================================
+   BOOK GRID
+================================ */
+
+.books-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+
+/* ================================
+   BOOK CARD
+================================ */
+
+.book-card {
+  padding: 24px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #c4b5fd;
+
+  box-shadow:
+    0 18px 40px rgba(76, 29, 149, 0.09);
+}
+
+
+/* ================================
+   TOP
+================================ */
+
+.book-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.book-number {
+  color: #a78bfa;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.book-category {
+  color: #6d28d9;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-align: right;
+}
+
+
+/* ================================
+   BOOK COVER
+================================ */
+
+.book-cover {
+  height: 190px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #172554,
+      #312e81
+    );
+
+  box-shadow:
+    0 12px 25px rgba(23, 37, 84, 0.15);
+}
+
+.book-cover span {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.book-content h3 {
+  margin: 0 0 10px;
+
+  color: #172554;
+
+  font-size: 21px;
+}
+
+.book-content p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* ================================
+   AUTHORSHIP NOTE
+================================ */
+
+.authorship-note {
+  margin-top: 45px;
+
+  padding: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  border: 1px solid #ddd6fe;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.note-mark {
+  min-width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #ede9fe;
+
+  color: #6d28d9;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.note-label {
+  margin: 0 0 6px;
+
+  color: #6d28d9;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.authorship-note h3 {
+  margin: 0 0 8px;
+
+  color: #172554;
+
+  font-size: 20px;
+}
+
+.authorship-note > div:last-child > p:last-child {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+
+  .books-section {
+    padding: 80px 6%;
+  }
+
+  .section-heading h2 {
+    font-size: 35px;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cover {
+    height: 170px;
+  }
+
+  .authorship-note {
+    align-items: flex-start;
+
+    padding: 24px;
+  }
+}

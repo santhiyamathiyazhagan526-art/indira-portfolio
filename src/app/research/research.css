@@ -1,0 +1,313 @@
+.research-section {
+  padding: 110px 8%;
+  background: #f8f7ff;
+}
+
+.research-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 65px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+
+  color: #6d28d9;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+.section-description {
+  margin-top: 18px;
+
+  color: #6b7280;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* ================================
+   SUBSECTION
+================================ */
+
+.subsection {
+  margin-bottom: 75px;
+}
+
+.subsection > h3 {
+  margin-bottom: 30px;
+
+  color: #172554;
+
+  font-size: 28px;
+}
+
+
+/* ================================
+   RESEARCH CARDS
+================================ */
+
+.research-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.research-card {
+  position: relative;
+
+  min-height: 250px;
+
+  padding: 30px 25px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #c4b5fd;
+
+  box-shadow:
+    0 18px 40px rgba(76, 29, 149, 0.1);
+}
+
+.card-number {
+  margin-bottom: 30px;
+
+  color: #c4b5fd;
+
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.research-card h4 {
+  margin: 0 0 15px;
+
+  color: #172554;
+
+  font-size: 20px;
+}
+
+.research-card p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* ================================
+   APPLICATIONS
+================================ */
+
+.application-list {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.application-item {
+  padding: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition: 0.3s ease;
+}
+
+.application-item:hover {
+  transform: translateY(-3px);
+
+  border-color: #c4b5fd;
+}
+
+.application-item span {
+  color: #8b5cf6;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.application-item h4 {
+  margin: 0;
+
+  color: #374151;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* ================================
+   EMERGING RESEARCH
+================================ */
+
+.emerging-research {
+  padding: 40px;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 50px;
+
+  align-items: center;
+
+  border-radius: 20px;
+
+  background: #172554;
+}
+
+.emerging-content .section-label {
+  color: #c4b5fd;
+}
+
+.emerging-content h3 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 28px;
+}
+
+.emerging-content p:last-child {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.emerging-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.emerging-tags span {
+  padding: 11px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 30px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 13px;
+
+  transition: 0.3s ease;
+}
+
+.emerging-tags span:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+  .research-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .application-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .emerging-research {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .research-section {
+    padding: 80px 6%;
+  }
+
+  .section-heading h2 {
+    font-size: 35px;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .application-list {
+    grid-template-columns: 1fr;
+  }
+
+  .emerging-research {
+    padding: 30px 24px;
+  }
+
+  .emerging-content h3 {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,357 @@
+/* ========================================
+   ACHIEVEMENTS SECTION
+======================================== */
+
+.achievements-section {
+  padding: 110px 8%;
+  background: #f8f7ff;
+}
+
+.achievements-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+
+  color: #6d28d9;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.section-description {
+  margin-top: 18px;
+
+  color: #6b7280;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   FEATURED AWARDS
+======================================== */
+
+.featured-awards {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 75px;
+}
+
+.featured-award {
+  padding: 30px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.featured-award:hover {
+  transform: translateY(-6px);
+
+  border-color: #c4b5fd;
+
+  box-shadow:
+    0 15px 35px rgba(76, 29, 149, 0.08);
+}
+
+
+/* Award Symbol */
+
+.award-symbol {
+  min-width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #ede9fe;
+
+  color: #6d28d9;
+
+  font-size: 21px;
+}
+
+
+/* Award Content */
+
+.award-label {
+  color: #8b5cf6;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+.featured-award h3 {
+  margin: 8px 0 10px;
+
+  color: #172554;
+
+  font-size: 19px;
+
+  line-height: 1.4;
+}
+
+.featured-award p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   RECOGNITION SECTION
+======================================== */
+
+.recognition-section {
+  margin-bottom: 55px;
+}
+
+.recognition-heading {
+  margin-bottom: 30px;
+}
+
+.recognition-heading h3 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 30px;
+}
+
+
+/* Recognition Grid */
+
+.recognition-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 16px;
+}
+
+.recognition-item {
+  padding: 25px;
+
+  display: flex;
+
+  gap: 20px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  transition: 0.3s ease;
+}
+
+.recognition-item:hover {
+  transform: translateY(-4px);
+
+  border-color: #c4b5fd;
+
+  box-shadow:
+    0 10px 28px rgba(76, 29, 149, 0.07);
+}
+
+.recognition-number {
+  color: #a78bfa;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.recognition-item h4 {
+  margin: 0 0 7px;
+
+  color: #172554;
+
+  font-size: 17px;
+}
+
+.recognition-item p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   RECOGNITION NOTE
+======================================== */
+
+.recognition-note {
+  padding: 28px 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  border: 1px dashed #c4b5fd;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.note-symbol {
+  min-width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ede9fe;
+
+  color: #6d28d9;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.note-label {
+  margin: 0 0 6px;
+
+  color: #6d28d9;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.recognition-note h3 {
+  margin: 0 0 8px;
+
+  color: #172554;
+
+  font-size: 20px;
+}
+
+.recognition-note > div:last-child > p:last-child {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .featured-awards {
+    grid-template-columns: 1fr;
+  }
+
+  .recognition-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .achievements-section {
+    padding: 80px 6%;
+  }
+
+  .section-heading h2 {
+    font-size: 35px;
+  }
+
+  .featured-award {
+    padding: 24px;
+  }
+
+  .recognition-item {
+    padding: 22px;
+  }
+
+  .recognition-note {
+    align-items: flex-start;
+
+    padding: 24px;
+  }
+
+  .recognition-note h3 {
+    font-size: 18px;
+  }
+
+}

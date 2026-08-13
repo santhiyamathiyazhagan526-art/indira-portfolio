@@ -1,0 +1,299 @@
+.about-section {
+  padding: 110px 8%;
+  background: #ffffff;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ================================
+   SECTION HEADING
+================================ */
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+  color: #6d28d9;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #172554;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.heading-line {
+  margin-top: 18px;
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* ================================
+   ABOUT GRID
+================================ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-content h3 {
+  margin: 0 0 20px;
+  color: #172554;
+  font-size: 28px;
+}
+
+.about-content p {
+  margin: 0 0 20px;
+  color: #5f6470;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+
+/* ================================
+   ACADEMIC PROFILE CARD
+================================ */
+
+.about-card {
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #faf9ff;
+}
+
+.about-card h3 {
+  margin: 0 0 20px;
+  color: #172554;
+  font-size: 22px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 17px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-title {
+  color: #6d28d9;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.info-value {
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* ================================
+   LEADERSHIP HIGHLIGHT
+================================ */
+
+.leadership-highlight {
+  margin-top: 55px;
+  padding: 30px 34px;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  border: 1px solid #ddd6fe;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f3ff 0%,
+      #faf9ff 100%
+    );
+
+  box-shadow:
+    0 12px 35px rgba(76, 29, 149, 0.06);
+}
+
+.leadership-icon {
+  min-width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #6d28d9;
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.leadership-content {
+  flex: 1;
+}
+
+.leadership-label {
+  color: #6d28d9;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.leadership-highlight h3 {
+  margin: 8px 0 8px;
+
+  color: #172554;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.leadership-highlight p {
+  margin: 0 0 5px;
+
+  color: #374151;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.leadership-institution {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ================================
+   SPECIALIZATION
+================================ */
+
+.specialization {
+  margin-top: 80px;
+}
+
+.expertise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.expertise-tag {
+  padding: 11px 18px;
+
+  border: 1px solid #ddd6fe;
+  border-radius: 30px;
+
+  background: #faf9ff;
+  color: #5b21b6;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.expertise-tag:hover {
+  background: #ede9fe;
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .qualification-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .about-section {
+    padding: 80px 6%;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .heading-line {
+    font-size: 15px;
+  }
+
+  .about-content h3 {
+    font-size: 25px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  .leadership-highlight {
+    align-items: flex-start;
+    padding: 24px;
+    gap: 18px;
+  }
+
+  .leadership-icon {
+    min-width: 55px;
+    height: 55px;
+    font-size: 16px;
+  }
+
+  .leadership-highlight h3 {
+    font-size: 21px;
+  }
+
+  .leadership-highlight p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .qualification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subsection-heading h3 {
+    font-size: 26px;
+  }
+
+  .expertise-tag {
+    font-size: 13px;
+  }
+}
