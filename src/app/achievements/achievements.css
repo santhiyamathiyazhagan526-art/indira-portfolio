@@ -1,14 +1,83 @@
 /* ========================================
-   ACHIEVEMENTS SECTION
+   DARK + SHINY GOLD ACHIEVEMENTS
 ======================================== */
 
 .achievements-section {
+  position: relative;
+
   padding: 110px 8%;
-  background: #f8f7ff;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(212, 175, 55, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(212, 175, 55, 0.05),
+      transparent 30%
+    ),
+    #080808;
+
+  color: #f5f5f5;
+
+  overflow: hidden;
 }
 
+
+/* ========================================
+   SUBTLE BACKGROUND GLITTER
+======================================== */
+
+.achievements-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 235, 150, 0.45) 0 1px,
+      transparent 1.5px
+    );
+
+  background-size: 80px 80px;
+
+  opacity: 0.055;
+
+  animation: achievementGlitter 10s linear infinite;
+}
+
+
+@keyframes achievementGlitter {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 80px 80px;
+  }
+
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
 .achievements-container {
+  position: relative;
+
+  z-index: 1;
+
   max-width: 1200px;
+
   margin: 0 auto;
 }
 
@@ -19,36 +88,83 @@
 
 .section-heading {
   max-width: 780px;
+
   margin-bottom: 60px;
 }
+
+
+/* ========================================
+   SHINY GOLD LABEL
+======================================== */
 
 .section-label {
   margin: 0 0 12px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #98721d 0%,
+      #d4af37 20%,
+      #fff1a3 40%,
+      #d4af37 55%,
+      #f5d76e 75%,
+      #9f781c 100%
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
+
+  animation: achievementGoldShine 5s linear infinite;
 }
+
+
+@keyframes achievementGoldShine {
+
+  0% {
+    background-position: 250% center;
+  }
+
+  100% {
+    background-position: -250% center;
+  }
+
+}
+
+
+/* ========================================
+   MAIN HEADING
+======================================== */
 
 .section-heading h2 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 44px;
+
   line-height: 1.2;
+
   font-weight: 700;
 }
+
 
 .section-description {
   margin-top: 18px;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 17px;
+
   line-height: 1.8;
 }
 
@@ -67,19 +183,37 @@
   margin-bottom: 75px;
 }
 
+
+/* ========================================
+   FEATURED AWARD
+======================================== */
+
 .featured-award {
+  position: relative;
+
   padding: 30px;
 
   display: flex;
+
   align-items: flex-start;
 
   gap: 20px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0f0f0f
+    );
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.30);
 
   transition:
     transform 0.3s ease,
@@ -87,63 +221,168 @@
     border-color 0.3s ease;
 }
 
-.featured-award:hover {
-  transform: translateY(-6px);
 
-  border-color: #c4b5fd;
+/* ========================================
+   AWARD CARD SHINE
+======================================== */
 
-  box-shadow:
-    0 15px 35px rgba(76, 29, 149, 0.08);
+.featured-award::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -130%;
+
+  width: 65%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.10),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
 }
 
 
-/* Award Symbol */
+.featured-award:hover::before {
+  left: 140%;
+}
+
+
+.featured-award:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(212, 175, 55, 0.45);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(212, 175, 55, 0.08);
+}
+
+
+/* ========================================
+   AWARD SYMBOL
+======================================== */
 
 .award-symbol {
+  position: relative;
+
+  z-index: 1;
+
   min-width: 48px;
+
   height: 48px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 12px;
 
-  background: #ede9fe;
+  background:
+    linear-gradient(
+      135deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #b8891f
+    );
 
-  color: #6d28d9;
+  color: #080808;
 
   font-size: 21px;
+
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.12);
+
+  animation:
+    awardGlow 3s ease-in-out infinite alternate;
 }
 
 
-/* Award Content */
+@keyframes awardGlow {
+
+  0% {
+    box-shadow:
+      0 0 10px rgba(212, 175, 55, 0.08);
+  }
+
+  100% {
+    box-shadow:
+      0 0 25px rgba(212, 175, 55, 0.20);
+  }
+
+}
+
+
+/* ========================================
+   AWARD CONTENT
+======================================== */
+
+.featured-award > div:last-child {
+  position: relative;
+
+  z-index: 1;
+}
+
 
 .award-label {
-  color: #8b5cf6;
+  background:
+    linear-gradient(
+      120deg,
+      #a17b20,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #a17b20
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 10px;
 
   font-weight: 700;
 
   letter-spacing: 1.4px;
+
+  animation: achievementGoldShine 5s linear infinite;
 }
+
 
 .featured-award h3 {
   margin: 8px 0 10px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 19px;
 
   line-height: 1.4;
 }
 
+
 .featured-award p {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 13px;
 
@@ -159,20 +398,24 @@
   margin-bottom: 55px;
 }
 
+
 .recognition-heading {
   margin-bottom: 30px;
 }
 
+
 .recognition-heading h3 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 30px;
 }
 
 
-/* Recognition Grid */
+/* ========================================
+   RECOGNITION GRID
+======================================== */
 
 .recognition-grid {
   display: grid;
@@ -182,51 +425,144 @@
   gap: 16px;
 }
 
+
+/* ========================================
+   RECOGNITION ITEM
+======================================== */
+
 .recognition-item {
+  position: relative;
+
   padding: 25px;
 
   display: flex;
 
   gap: 20px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 14px;
 
-  background: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #101010
+    );
 
-  transition: 0.3s ease;
+  overflow: hidden;
+
+  transition:
+    0.3s ease;
 }
+
+
+/* ========================================
+   RECOGNITION SHINE
+======================================== */
+
+.recognition-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+}
+
+
+.recognition-item:hover::before {
+  left: 140%;
+}
+
 
 .recognition-item:hover {
   transform: translateY(-4px);
 
-  border-color: #c4b5fd;
+  border-color: rgba(212, 175, 55, 0.40);
 
   box-shadow:
-    0 10px 28px rgba(76, 29, 149, 0.07);
+    0 15px 35px rgba(0, 0, 0, 0.40),
+    0 0 20px rgba(212, 175, 55, 0.06);
 }
 
+
+/* ========================================
+   RECOGNITION NUMBER
+======================================== */
+
 .recognition-number {
-  color: #a78bfa;
+  position: relative;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      120deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #9f781c
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 13px;
 
   font-weight: 700;
+
+  animation: achievementGoldShine 5s linear infinite;
 }
+
+
+/* ========================================
+   RECOGNITION CONTENT
+======================================== */
+
+.recognition-item > div:last-child {
+  position: relative;
+
+  z-index: 1;
+}
+
 
 .recognition-item h4 {
   margin: 0 0 7px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 17px;
 }
 
+
 .recognition-item p {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 13px;
 
@@ -239,6 +575,8 @@
 ======================================== */
 
 .recognition-note {
+  position: relative;
+
   padding: 28px 30px;
 
   display: flex;
@@ -247,57 +585,158 @@
 
   gap: 22px;
 
-  border: 1px dashed #c4b5fd;
+  border: 1px dashed rgba(212, 175, 55, 0.45);
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(212, 175, 55, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #151515,
+      #101010
+    );
+
+  overflow: hidden;
 }
 
+
+/* ========================================
+   NOTE SHINE
+======================================== */
+
+.recognition-note::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.07),
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+}
+
+
+.recognition-note:hover::before {
+  left: 140%;
+}
+
+
+/* ========================================
+   NOTE SYMBOL
+======================================== */
+
 .note-symbol {
+  position: relative;
+
+  z-index: 1;
+
   min-width: 55px;
+
   height: 55px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
 
-  background: #ede9fe;
+  background:
+    linear-gradient(
+      135deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #b8891f
+    );
 
-  color: #6d28d9;
+  color: #080808;
 
   font-size: 20px;
 
   font-weight: 700;
+
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.12);
 }
+
+
+/* ========================================
+   NOTE CONTENT
+======================================== */
+
+.recognition-note > div:last-child {
+  position: relative;
+
+  z-index: 1;
+}
+
 
 .note-label {
   margin: 0 0 6px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #a17b20,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #a17b20
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 11px;
 
   font-weight: 700;
 
   letter-spacing: 1.5px;
+
+  animation: achievementGoldShine 5s linear infinite;
 }
+
 
 .recognition-note h3 {
   margin: 0 0 8px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 20px;
 }
 
+
 .recognition-note > div:last-child > p:last-child {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
 
@@ -314,6 +753,7 @@
   .featured-awards {
     grid-template-columns: 1fr;
   }
+
 
   .recognition-grid {
     grid-template-columns: 1fr;
@@ -332,26 +772,125 @@
     padding: 80px 6%;
   }
 
+
   .section-heading h2 {
     font-size: 35px;
   }
 
+
+  .section-description {
+    font-size: 15px;
+  }
+
+
   .featured-award {
     padding: 24px;
+
+    gap: 16px;
   }
+
+
+  .award-symbol {
+    min-width: 44px;
+
+    height: 44px;
+
+    font-size: 18px;
+  }
+
+
+  .featured-award h3 {
+    font-size: 18px;
+  }
+
+
+  .featured-award p {
+    font-size: 13px;
+  }
+
 
   .recognition-item {
     padding: 22px;
+
+    gap: 16px;
   }
+
 
   .recognition-note {
     align-items: flex-start;
 
     padding: 24px;
+
+    gap: 16px;
   }
+
+
+  .note-symbol {
+    min-width: 48px;
+
+    height: 48px;
+
+    font-size: 18px;
+  }
+
 
   .recognition-note h3 {
     font-size: 18px;
+  }
+
+
+  .recognition-note > div:last-child > p:last-child {
+    font-size: 13px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+  .achievements-section {
+    padding-left: 5%;
+
+    padding-right: 5%;
+  }
+
+
+  .section-heading h2 {
+    font-size: 31px;
+  }
+
+
+  .featured-award {
+    flex-direction: column;
+  }
+
+
+  .recognition-item {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .achievements-section::before,
+  .section-label,
+  .award-label,
+  .recognition-number,
+  .note-label,
+  .award-symbol {
+    animation: none;
   }
 
 }

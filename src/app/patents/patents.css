@@ -1,14 +1,83 @@
 /* ========================================
-   PATENTS SECTION
+   DARK + SHINY GOLD PATENTS SECTION
 ======================================== */
 
 .patents-section {
+  position: relative;
+
   padding: 110px 8%;
-  background: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(212, 175, 55, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(212, 175, 55, 0.05),
+      transparent 30%
+    ),
+    #080808;
+
+  color: #f5f5f5;
+
+  overflow: hidden;
 }
 
+
+/* ========================================
+   SUBTLE BACKGROUND GLITTER
+======================================== */
+
+.patents-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 235, 150, 0.45) 0 1px,
+      transparent 1.5px
+    );
+
+  background-size: 80px 80px;
+
+  opacity: 0.055;
+
+  animation: patentGlitter 10s linear infinite;
+}
+
+
+@keyframes patentGlitter {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 80px 80px;
+  }
+
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
 .patents-container {
+  position: relative;
+
+  z-index: 1;
+
   max-width: 1200px;
+
   margin: 0 auto;
 }
 
@@ -19,36 +88,83 @@
 
 .section-heading {
   max-width: 780px;
+
   margin-bottom: 60px;
 }
+
+
+/* ========================================
+   SHINY GOLD SECTION LABEL
+======================================== */
 
 .section-label {
   margin: 0 0 12px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #98721d 0%,
+      #d4af37 20%,
+      #fff1a3 40%,
+      #d4af37 55%,
+      #f5d76e 75%,
+      #9f781c 100%
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
+
+  animation: patentGoldShine 5s linear infinite;
 }
+
+
+@keyframes patentGoldShine {
+
+  0% {
+    background-position: 250% center;
+  }
+
+  100% {
+    background-position: -250% center;
+  }
+
+}
+
+
+/* ========================================
+   MAIN HEADING
+======================================== */
 
 .section-heading h2 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 44px;
+
   line-height: 1.2;
+
   font-weight: 700;
 }
+
 
 .section-description {
   margin-top: 18px;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 17px;
+
   line-height: 1.8;
 }
 
@@ -67,19 +183,37 @@
   margin-bottom: 75px;
 }
 
+
+/* ========================================
+   STAT CARD
+======================================== */
+
 .stat-card {
+  position: relative;
+
   padding: 28px;
 
   display: flex;
+
   align-items: center;
 
   gap: 22px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 16px;
 
-  background: #faf9ff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0f0f0f
+    );
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.30);
 
   transition:
     transform 0.3s ease,
@@ -87,41 +221,111 @@
     border-color 0.3s ease;
 }
 
+
+/* ========================================
+   STAT CARD SHINE
+======================================== */
+
+.stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 65%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.10),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+}
+
+
+.stat-card:hover::before {
+  left: 140%;
+}
+
+
 .stat-card:hover {
   transform: translateY(-5px);
 
-  border-color: #c4b5fd;
+  border-color: rgba(212, 175, 55, 0.45);
 
   box-shadow:
-    0 15px 35px rgba(76, 29, 149, 0.08);
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(212, 175, 55, 0.07);
 }
+
+
+/* ========================================
+   STAT NUMBER
+======================================== */
 
 .stat-number {
   min-width: 65px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #9f781c
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 42px;
+
   font-weight: 700;
 
   line-height: 1;
+
+  animation: patentGoldShine 5s linear infinite;
 }
+
+
+/* ========================================
+   STAT CONTENT
+======================================== */
 
 .stat-card h3 {
   margin: 0 0 6px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 18px;
+
   font-weight: 700;
 }
+
 
 .stat-card p {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 13px;
+
   line-height: 1.5;
 }
 
@@ -134,17 +338,25 @@
   margin-bottom: 60px;
 }
 
+
+/* ========================================
+   AREA HEADING
+======================================== */
+
 .area-heading {
   margin-bottom: 30px;
 }
 
+
 .area-heading h3 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 30px;
+
   line-height: 1.3;
+
   font-weight: 700;
 }
 
@@ -154,6 +366,8 @@
 ======================================== */
 
 .patent-entry {
+  position: relative;
+
   display: grid;
 
   grid-template-columns: 70px 1fr;
@@ -164,11 +378,21 @@
 
   margin-bottom: 18px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0f0f0f
+    );
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.30);
 
   transition:
     transform 0.3s ease,
@@ -176,17 +400,59 @@
     border-color 0.3s ease;
 }
 
+
 .patent-entry:last-child {
   margin-bottom: 0;
 }
 
+
+/* ========================================
+   PATENT ENTRY SHINE
+======================================== */
+
+.patent-entry::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -130%;
+
+  width: 65%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.10),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+
+.patent-entry:hover::before {
+  left: 140%;
+}
+
+
 .patent-entry:hover {
   transform: translateX(5px);
 
-  border-color: #c4b5fd;
+  border-color: rgba(212, 175, 55, 0.45);
 
   box-shadow:
-    0 12px 30px rgba(76, 29, 149, 0.08);
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(212, 175, 55, 0.07);
 }
 
 
@@ -195,23 +461,39 @@
 ======================================== */
 
 .patent-entry-number {
+  position: relative;
+
+  z-index: 1;
+
   width: 55px;
+
   height: 55px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
 
-  background: #ede9fe;
+  background:
+    linear-gradient(
+      135deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #b8891f
+    );
 
-  color: #6d28d9;
+  color: #080808;
 
   font-size: 15px;
 
   font-weight: 700;
+
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.12);
 }
 
 
@@ -223,6 +505,7 @@
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 20px;
@@ -230,18 +513,45 @@
   margin-bottom: 12px;
 }
 
+
+/* ========================================
+   PATENT TYPE
+======================================== */
+
 .patent-type {
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #a17b20,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #a17b20
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 11px;
 
   font-weight: 700;
 
   letter-spacing: 1.4px;
+
+  animation: patentGoldShine 5s linear infinite;
 }
 
+
+/* ========================================
+   PATENT DATE
+======================================== */
+
 .patent-date {
-  color: #8b5cf6;
+  color: #d4af37;
 
   font-size: 12px;
 
@@ -255,10 +565,17 @@
    PATENT TITLE
 ======================================== */
 
+.patent-entry-content {
+  position: relative;
+
+  z-index: 1;
+}
+
+
 .patent-entry-content h4 {
   margin: 0 0 12px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 21px;
 
@@ -275,7 +592,7 @@
 .patent-entry-content > p {
   margin: 0 0 18px;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
 
@@ -295,20 +612,22 @@
   gap: 10px;
 }
 
+
 .patent-reference span {
   padding: 7px 11px;
 
   border-radius: 6px;
 
-  background: #f8f7ff;
+  background:
+    rgba(212, 175, 55, 0.05);
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 11px;
 
   line-height: 1.4;
 
-  border: 1px solid #eeeef2;
+  border: 1px solid rgba(212, 175, 55, 0.20);
 }
 
 
@@ -317,6 +636,8 @@
 ======================================== */
 
 .patent-note {
+  position: relative;
+
   padding: 28px 30px;
 
   display: flex;
@@ -325,59 +646,160 @@
 
   gap: 22px;
 
-  border: 1px dashed #c4b5fd;
+  border: 1px dashed rgba(212, 175, 55, 0.45);
 
   border-radius: 16px;
 
-  background: #faf9ff;
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(212, 175, 55, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #151515,
+      #101010
+    );
+
+  overflow: hidden;
 }
 
+
+/* ========================================
+   PATENT NOTE SHINE
+======================================== */
+
+.patent-note::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.07),
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+}
+
+
+.patent-note:hover::before {
+  left: 140%;
+}
+
+
+/* ========================================
+   NOTE MARK
+======================================== */
+
 .note-mark {
+  position: relative;
+
+  z-index: 1;
+
   min-width: 55px;
+
   height: 55px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 12px;
 
-  background: #ede9fe;
+  background:
+    linear-gradient(
+      135deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #b8891f
+    );
 
-  color: #6d28d9;
+  color: #080808;
 
   font-size: 15px;
 
   font-weight: 700;
+
+  box-shadow:
+    0 0 18px rgba(212, 175, 55, 0.12);
 }
+
+
+/* ========================================
+   NOTE CONTENT
+======================================== */
+
+.patent-note > div:last-child {
+  position: relative;
+
+  z-index: 1;
+}
+
 
 .note-label {
   margin: 0 0 6px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #a17b20,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #a17b20
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 11px;
 
   font-weight: 700;
 
   letter-spacing: 1.5px;
+
+  animation: patentGoldShine 5s linear infinite;
 }
+
 
 .patent-note h3 {
   margin: 0 0 8px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 20px;
 
   font-weight: 700;
 }
 
+
 .patent-note > div:last-child > p:last-child {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
 
@@ -408,9 +830,11 @@
     padding: 90px 6%;
   }
 
+
   .section-heading h2 {
     font-size: 38px;
   }
+
 
   .patent-entry {
     grid-template-columns: 60px 1fr;
@@ -420,8 +844,10 @@
     padding: 26px;
   }
 
+
   .patent-entry-number {
     width: 50px;
+
     height: 50px;
   }
 
@@ -438,13 +864,16 @@
     padding: 80px 6%;
   }
 
+
   .section-heading {
     margin-bottom: 45px;
   }
 
+
   .section-heading h2 {
     font-size: 35px;
   }
+
 
   .section-description {
     font-size: 15px;
@@ -459,11 +888,13 @@
     gap: 18px;
   }
 
+
   .stat-number {
     min-width: 55px;
 
     font-size: 35px;
   }
+
 
   .stat-card h3 {
     font-size: 16px;
@@ -480,8 +911,10 @@
     padding: 24px;
   }
 
+
   .patent-entry-number {
     width: 45px;
+
     height: 45px;
   }
 
@@ -494,15 +927,18 @@
     gap: 8px;
   }
 
+
   .patent-date {
     white-space: normal;
   }
+
 
   .patent-entry-content h4 {
     font-size: 18px;
 
     line-height: 1.5;
   }
+
 
   .patent-entry-content > p {
     font-size: 13px;
@@ -519,6 +955,7 @@
     gap: 7px;
   }
 
+
   .patent-reference span {
     font-size: 11px;
   }
@@ -534,14 +971,18 @@
     gap: 16px;
   }
 
+
   .note-mark {
     min-width: 48px;
+
     height: 48px;
   }
+
 
   .patent-note h3 {
     font-size: 18px;
   }
+
 
   .patent-note > div:last-child > p:last-child {
     font-size: 13px;
@@ -558,23 +999,45 @@
 
   .patents-section {
     padding-left: 5%;
+
     padding-right: 5%;
   }
+
 
   .section-heading h2 {
     font-size: 31px;
   }
 
+
   .stat-card {
     align-items: flex-start;
   }
+
 
   .stat-number {
     font-size: 32px;
   }
 
+
   .patent-entry {
     padding: 20px;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .patents-section::before,
+  .section-label,
+  .stat-number,
+  .patent-type,
+  .note-label {
+    animation: none;
   }
 
 }

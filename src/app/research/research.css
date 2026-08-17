@@ -1,73 +1,195 @@
+/* ========================================
+   DARK + SHINY GOLD RESEARCH SECTION
+======================================== */
+
 .research-section {
+  position: relative;
+
   padding: 110px 8%;
-  background: #f8f7ff;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(212, 175, 55, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(212, 175, 55, 0.05),
+      transparent 30%
+    ),
+    #080808;
+
+  color: #f5f5f5;
+
+  overflow: hidden;
 }
 
+
+/* ========================================
+   SUBTLE BACKGROUND GLITTER
+======================================== */
+
+.research-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 235, 150, 0.45) 0 1px,
+      transparent 1.5px
+    );
+
+  background-size: 80px 80px;
+
+  opacity: 0.055;
+
+  animation: researchGlitter 10s linear infinite;
+}
+
+
+@keyframes researchGlitter {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 80px 80px;
+  }
+
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
 .research-container {
+  position: relative;
+
+  z-index: 1;
+
   max-width: 1200px;
+
   margin: 0 auto;
 }
 
 
-/* ================================
+/* ========================================
    HEADING
-================================ */
+======================================== */
 
 .section-heading {
   max-width: 780px;
+
   margin-bottom: 65px;
 }
+
+
+/* ========================================
+   SHINY GOLD LABEL
+======================================== */
 
 .section-label {
   margin: 0 0 12px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #98721d 0%,
+      #d4af37 20%,
+      #fff1a3 40%,
+      #d4af37 55%,
+      #f5d76e 75%,
+      #9f781c 100%
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
+
+  animation: researchGoldShine 5s linear infinite;
 }
+
+
+@keyframes researchGoldShine {
+
+  0% {
+    background-position: 250% center;
+  }
+
+  100% {
+    background-position: -250% center;
+  }
+
+}
+
+
+/* ========================================
+   MAIN HEADING
+======================================== */
 
 .section-heading h2 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 44px;
+
   line-height: 1.2;
+
+  font-weight: 700;
 }
+
 
 .section-description {
   margin-top: 18px;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 17px;
+
   line-height: 1.8;
 }
 
 
-/* ================================
+/* ========================================
    SUBSECTION
-================================ */
+======================================== */
 
 .subsection {
   margin-bottom: 75px;
 }
 
+
 .subsection > h3 {
   margin-bottom: 30px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 28px;
 }
 
 
-/* ================================
-   RESEARCH CARDS
-================================ */
+/* ========================================
+   RESEARCH GRID
+======================================== */
 
 .research-grid {
   display: grid;
@@ -77,6 +199,11 @@
   gap: 20px;
 }
 
+
+/* ========================================
+   RESEARCH CARD
+======================================== */
+
 .research-card {
   position: relative;
 
@@ -84,13 +211,21 @@
 
   padding: 30px 25px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0f0f0f
+    );
 
   overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.30);
 
   transition:
     transform 0.3s ease,
@@ -98,36 +233,110 @@
     border-color 0.3s ease;
 }
 
+
+/* ========================================
+   RESEARCH CARD SHINE
+======================================== */
+
+.research-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -130%;
+
+  width: 65%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.10),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+
+.research-card:hover::before {
+  left: 140%;
+}
+
+
 .research-card:hover {
   transform: translateY(-7px);
 
-  border-color: #c4b5fd;
+  border-color: rgba(212, 175, 55, 0.45);
 
   box-shadow:
-    0 18px 40px rgba(76, 29, 149, 0.1);
+    0 20px 45px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(212, 175, 55, 0.08);
 }
+
+
+/* ========================================
+   CARD NUMBER
+======================================== */
 
 .card-number {
   margin-bottom: 30px;
 
-  color: #c4b5fd;
+  background:
+    linear-gradient(
+      120deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #9f781c
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 34px;
+
   font-weight: 700;
+
+  animation: researchGoldShine 5s linear infinite;
 }
+
+
+/* ========================================
+   CARD TITLE
+======================================== */
 
 .research-card h4 {
   margin: 0 0 15px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 20px;
 }
 
+
+/* ========================================
+   CARD DESCRIPTION
+======================================== */
+
 .research-card p {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
 
@@ -135,9 +344,9 @@
 }
 
 
-/* ================================
+/* ========================================
    APPLICATIONS
-================================ */
+======================================== */
 
 .application-list {
   display: grid;
@@ -147,7 +356,14 @@
   gap: 15px;
 }
 
+
+/* ========================================
+   APPLICATION ITEM
+======================================== */
+
 .application-item {
+  position: relative;
+
   padding: 22px;
 
   display: flex;
@@ -156,33 +372,100 @@
 
   gap: 15px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 12px;
 
-  background: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #101010
+    );
 
-  transition: 0.3s ease;
+  overflow: hidden;
+
+  transition:
+    0.3s ease;
 }
+
+
+/* ========================================
+   APPLICATION SHINE
+======================================== */
+
+.application-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.07),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+
+.application-item:hover::before {
+  left: 140%;
+}
+
 
 .application-item:hover {
   transform: translateY(-3px);
 
-  border-color: #c4b5fd;
+  border-color: rgba(212, 175, 55, 0.40);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
+
 .application-item span {
-  color: #8b5cf6;
+  background:
+    linear-gradient(
+      120deg,
+      #a17b20,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #a17b20
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 13px;
 
   font-weight: 700;
+
+  animation: researchGoldShine 5s linear infinite;
 }
+
 
 .application-item h4 {
   margin: 0;
 
-  color: #374151;
+  color: #d4d4d8;
 
   font-size: 14px;
 
@@ -190,11 +473,13 @@
 }
 
 
-/* ================================
+/* ========================================
    EMERGING RESEARCH
-================================ */
+======================================== */
 
 .emerging-research {
+  position: relative;
+
   padding: 40px;
 
   display: grid;
@@ -207,32 +492,111 @@
 
   border-radius: 20px;
 
-  background: #172554;
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(212, 175, 55, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #181818,
+      #0d0d0d
+    );
+
+  border: 1px solid rgba(212, 175, 55, 0.30);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.40);
+
+  overflow: hidden;
 }
 
-.emerging-content .section-label {
-  color: #c4b5fd;
+
+/* ========================================
+   EMERGING RESEARCH SHINE
+======================================== */
+
+.emerging-research::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.9s ease;
+
+  pointer-events: none;
 }
+
+
+.emerging-research:hover::before {
+  left: 140%;
+}
+
+
+/* ========================================
+   EMERGING CONTENT
+======================================== */
+
+.emerging-content {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.emerging-content .section-label {
+  color: #e5c76b;
+}
+
 
 .emerging-content h3 {
   margin: 0 0 15px;
 
-  color: #ffffff;
+  color: #f5f5f5;
 
   font-size: 28px;
 }
 
+
 .emerging-content p:last-child {
   margin: 0;
 
-  color: #cbd5e1;
+  color: #a3a3a3;
 
   font-size: 15px;
 
   line-height: 1.7;
 }
 
+
+/* ========================================
+   EMERGING TAGS
+======================================== */
+
 .emerging-tags {
+  position: relative;
+
+  z-index: 1;
+
   display: flex;
 
   flex-wrap: wrap;
@@ -240,30 +604,80 @@
   gap: 12px;
 }
 
+
 .emerging-tags span {
+  position: relative;
+
   padding: 11px 17px;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.30);
 
   border-radius: 30px;
 
-  color: #ffffff;
+  color: #e5c76b;
 
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    rgba(212, 175, 55, 0.06);
 
   font-size: 13px;
 
-  transition: 0.3s ease;
+  transition:
+    0.3s ease;
+
+  overflow: hidden;
 }
+
+
+.emerging-tags span::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 255, 255, 0.16),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.5s ease;
+}
+
+
+.emerging-tags span:hover::before {
+  left: 140%;
+}
+
 
 .emerging-tags span:hover {
-  background: rgba(255, 255, 255, 0.15);
+  color: #fff0a0;
+
+  background:
+    rgba(212, 175, 55, 0.12);
+
+  border-color: #d4af37;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 18px rgba(212, 175, 55, 0.08);
 }
 
 
-/* ================================
+/* ========================================
    TABLET
-================================ */
+======================================== */
 
 @media (max-width: 1000px) {
 
@@ -271,9 +685,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+
   .application-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
 
   .emerging-research {
     grid-template-columns: 1fr;
@@ -281,9 +697,9 @@
 }
 
 
-/* ================================
+/* ========================================
    MOBILE
-================================ */
+======================================== */
 
 @media (max-width: 600px) {
 
@@ -291,23 +707,75 @@
     padding: 80px 6%;
   }
 
+
   .section-heading h2 {
     font-size: 35px;
   }
+
+
+  .section-description {
+    font-size: 15px;
+  }
+
 
   .research-grid {
     grid-template-columns: 1fr;
   }
 
+
+  .research-card {
+    min-height: auto;
+
+    padding: 26px 22px;
+  }
+
+
   .application-list {
     grid-template-columns: 1fr;
   }
 
+
   .emerging-research {
     padding: 30px 24px;
+
+    gap: 30px;
   }
+
 
   .emerging-content h3 {
     font-size: 24px;
   }
+
+
+  .emerging-content p:last-child {
+    font-size: 14px;
+  }
+
+
+  .emerging-tags {
+    gap: 9px;
+  }
+
+
+  .emerging-tags span {
+    font-size: 12px;
+
+    padding: 9px 14px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .research-section::before,
+  .section-label,
+  .card-number,
+  .application-item span {
+    animation: none;
+  }
+
 }

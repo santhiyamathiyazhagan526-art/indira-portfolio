@@ -1,61 +1,192 @@
+/* ========================================
+   DARK + SHINY GOLD EDUCATION
+======================================== */
+
 .education-section {
+  position: relative;
+
   padding: 110px 8%;
-  background: #f8f7ff;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(212, 175, 55, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(212, 175, 55, 0.05),
+      transparent 30%
+    ),
+    #080808;
+
+  color: #f5f5f5;
+
+  overflow: hidden;
 }
 
+
+/* ========================================
+   SUBTLE GLITTER BACKGROUND
+======================================== */
+
+.education-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 235, 150, 0.45) 0 1px,
+      transparent 1.5px
+    );
+
+  background-size: 75px 75px;
+
+  opacity: 0.06;
+
+  animation: educationGlitter 9s linear infinite;
+}
+
+
+@keyframes educationGlitter {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 75px 75px;
+  }
+
+}
+
+
+/* ========================================
+   EDUCATION CONTAINER
+======================================== */
+
 .education-container {
+  position: relative;
+
+  z-index: 1;
+
   max-width: 1000px;
+
   margin: 0 auto;
 }
 
 
-/* ================================
+/* ========================================
    SECTION HEADING
-================================ */
+======================================== */
 
 .section-heading {
   max-width: 760px;
+
   margin-bottom: 65px;
 }
+
+
+/* ========================================
+   SHINY GOLD SECTION LABEL
+======================================== */
 
 .section-label {
   margin: 0 0 12px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #98721d 0%,
+      #d4af37 20%,
+      #fff1a3 40%,
+      #d4af37 55%,
+      #f5d76e 75%,
+      #9f781c 100%
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
+
+  animation: educationGoldShine 5s linear infinite;
 }
+
+
+@keyframes educationGoldShine {
+
+  0% {
+    background-position: 250% center;
+  }
+
+  100% {
+    background-position: -250% center;
+  }
+
+}
+
+
+/* ========================================
+   SECTION TITLE
+======================================== */
 
 .section-heading h2 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 44px;
+
   line-height: 1.2;
+
+  font-weight: 700;
 }
+
+
+/* ========================================
+   SECTION DESCRIPTION
+======================================== */
 
 .section-description {
   margin-top: 18px;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 17px;
+
   line-height: 1.8;
 }
 
 
-/* ================================
+/* ========================================
    TIMELINE
-================================ */
+======================================== */
 
 .education-timeline {
   position: relative;
+
   padding-left: 75px;
 }
+
+
+/* ========================================
+   GOLD TIMELINE LINE
+======================================== */
 
 .education-timeline::before {
   content: "";
@@ -63,18 +194,31 @@
   position: absolute;
 
   left: 23px;
+
   top: 0;
+
   bottom: 0;
 
   width: 2px;
 
-  background: #ddd6fe;
+  background:
+    linear-gradient(
+      to bottom,
+      #8f6b18,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #8f6b18
+    );
+
+  box-shadow:
+    0 0 8px rgba(212, 175, 55, 0.18);
 }
 
 
-/* ================================
+/* ========================================
    EDUCATION ITEM
-================================ */
+======================================== */
 
 .education-item {
   position: relative;
@@ -82,59 +226,107 @@
   margin-bottom: 30px;
 }
 
+
 .education-item:last-child {
   margin-bottom: 0;
 }
 
 
-/* ================================
+/* ========================================
    TIMELINE MARKER
-================================ */
+======================================== */
 
 .timeline-marker {
   position: absolute;
 
   left: -75px;
+
   top: 25px;
 
   width: 48px;
+
   height: 48px;
 
   border-radius: 50%;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
-  background: #6d28d9;
+  background:
+    linear-gradient(
+      135deg,
+      #8f6b18,
+      #d4af37,
+      #fff0a0,
+      #c49a28
+    );
 
-  border: 5px solid #f8f7ff;
+  border: 5px solid #080808;
 
-  box-shadow: 0 0 0 2px #c4b5fd;
+  box-shadow:
+    0 0 0 2px #a8892a,
+    0 0 20px rgba(212, 175, 55, 0.18);
 
   z-index: 2;
+
+  animation:
+    educationMarkerGlow 3s ease-in-out infinite alternate;
 }
 
+
+@keyframes educationMarkerGlow {
+
+  0% {
+    box-shadow:
+      0 0 0 2px #8f6b18,
+      0 0 10px rgba(212, 175, 55, 0.08);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 2px #d4af37,
+      0 0 24px rgba(212, 175, 55, 0.25);
+  }
+
+}
+
+
 .timeline-marker span {
-  color: #ffffff;
+  color: #080808;
 
   font-size: 12px;
+
   font-weight: 700;
 }
 
 
-/* ================================
+/* ========================================
    EDUCATION CARD
-================================ */
+======================================== */
 
 .education-card {
+  position: relative;
+
   padding: 30px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0f0f0f
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35);
+
+  overflow: hidden;
 
   transition:
     transform 0.3s ease,
@@ -142,24 +334,66 @@
     border-color 0.3s ease;
 }
 
-.education-card:hover {
-  transform: translateX(5px);
 
-  border-color: #c4b5fd;
+/* ========================================
+   CARD SHINE
+======================================== */
 
-  box-shadow:
-    0 15px 35px rgba(76, 29, 149, 0.08);
+.education-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -130%;
+
+  width: 65%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.10),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
 }
 
 
-/* ================================
+.education-card:hover::before {
+  left: 140%;
+}
+
+
+.education-card:hover {
+  transform: translateX(5px);
+
+  border-color: rgba(212, 175, 55, 0.45);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(212, 175, 55, 0.07);
+}
+
+
+/* ========================================
    TOP ROW
-================================ */
+======================================== */
 
 .education-top {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 20px;
@@ -167,54 +401,117 @@
   margin-bottom: 14px;
 }
 
+
+/* ========================================
+   DEGREE TYPE
+======================================== */
+
 .degree-type {
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #a17b20,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #a17b20
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 1.5px;
+
+  animation: educationGoldShine 5s linear infinite;
 }
+
+
+/* ========================================
+   DEGREE CODE
+======================================== */
 
 .degree-code {
   padding: 7px 12px;
 
   border-radius: 7px;
 
-  background: #ede9fe;
+  background:
+    rgba(212, 175, 55, 0.08);
 
-  color: #6d28d9;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  color: #e5c76b;
 
   font-size: 13px;
+
   font-weight: 700;
+
+  box-shadow:
+    0 0 12px rgba(212, 175, 55, 0.05);
 }
 
 
-/* ================================
-   CONTENT
-================================ */
+/* ========================================
+   EDUCATION CONTENT
+======================================== */
 
 .education-card h3 {
   margin: 0 0 8px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 23px;
 }
 
+
+/* ========================================
+   INSTITUTION
+======================================== */
+
 .institution {
   margin: 0 0 12px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #a17b20,
+      #d4af37,
+      #fff0a0,
+      #d4af37,
+      #a17b20
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 15px;
+
   font-weight: 600;
+
+  animation: educationGoldShine 5s linear infinite;
 }
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
 
 .description {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
 
@@ -222,9 +519,9 @@
 }
 
 
-/* ================================
+/* ========================================
    TABLET
-================================ */
+======================================== */
 
 @media (max-width: 700px) {
 
@@ -232,30 +529,37 @@
     padding: 80px 6%;
   }
 
+
   .section-heading h2 {
     font-size: 35px;
   }
+
 
   .education-timeline {
     padding-left: 60px;
   }
 
+
   .education-timeline::before {
     left: 18px;
   }
+
 
   .timeline-marker {
     left: -60px;
 
     width: 40px;
+
     height: 40px;
 
     border-width: 4px;
   }
 
+
   .education-card {
     padding: 24px;
   }
+
 
   .education-card h3 {
     font-size: 20px;
@@ -263,11 +567,18 @@
 }
 
 
-/* ================================
+/* ========================================
    MOBILE
-================================ */
+======================================== */
 
 @media (max-width: 480px) {
+
+  .education-section {
+    padding-left: 5%;
+
+    padding-right: 5%;
+  }
+
 
   .education-top {
     align-items: flex-start;
@@ -277,15 +588,40 @@
     gap: 10px;
   }
 
+
   .degree-code {
     align-self: flex-start;
   }
+
 
   .education-card h3 {
     font-size: 18px;
   }
 
+
   .description {
     font-size: 13px;
   }
+
+
+  .section-description {
+    font-size: 15px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .education-section::before,
+  .section-label,
+  .degree-type,
+  .institution,
+  .timeline-marker {
+    animation: none;
+  }
+
 }

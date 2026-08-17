@@ -1,56 +1,177 @@
+/* ========================================
+   DARK + SHINY GOLD PUBLICATIONS
+======================================== */
+
 .publications-section {
+  position: relative;
+
   padding: 110px 8%;
-  background: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(212, 175, 55, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(212, 175, 55, 0.05),
+      transparent 30%
+    ),
+    #080808;
+
+  color: #f5f5f5;
+
+  overflow: hidden;
 }
 
+
+/* ========================================
+   SUBTLE GLITTER
+======================================== */
+
+.publications-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 235, 150, 0.45) 0 1px,
+      transparent 1.5px
+    );
+
+  background-size: 80px 80px;
+
+  opacity: 0.055;
+
+  animation: publicationGlitter 10s linear infinite;
+}
+
+
+@keyframes publicationGlitter {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 80px 80px;
+  }
+
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
 .publications-container {
+  position: relative;
+
+  z-index: 1;
+
   max-width: 1200px;
+
   margin: 0 auto;
 }
 
 
-/* ================================
+/* ========================================
    SECTION HEADING
-================================ */
+======================================== */
 
 .section-heading {
   max-width: 780px;
+
   margin-bottom: 60px;
 }
+
+
+/* ========================================
+   SHINY GOLD LABEL
+======================================== */
 
 .section-label {
   margin: 0 0 12px;
 
-  color: #6d28d9;
+  background:
+    linear-gradient(
+      120deg,
+      #98721d 0%,
+      #d4af37 20%,
+      #fff1a3 40%,
+      #d4af37 55%,
+      #f5d76e 75%,
+      #9f781c 100%
+    );
+
+  background-size: 250% auto;
+
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
+
+  animation: publicationGoldShine 5s linear infinite;
 }
+
+
+@keyframes publicationGoldShine {
+
+  0% {
+    background-position: 250% center;
+  }
+
+  100% {
+    background-position: -250% center;
+  }
+
+}
+
+
+/* ========================================
+   MAIN HEADING
+======================================== */
 
 .section-heading h2 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 44px;
+
   line-height: 1.2;
+
+  font-weight: 700;
 }
+
 
 .section-description {
   margin-top: 18px;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 17px;
+
   line-height: 1.8;
 }
 
 
-/* ================================
+/* ========================================
    OVERVIEW CARDS
-================================ */
+======================================== */
 
 .publication-overview {
   display: grid;
@@ -62,14 +183,31 @@
   margin-bottom: 80px;
 }
 
+
+/* ========================================
+   OVERVIEW CARD
+======================================== */
+
 .overview-card {
+  position: relative;
+
   padding: 30px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #2a2a2a;
 
   border-radius: 16px;
 
-  background: #faf9ff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0f0f0f
+    );
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.30);
 
   transition:
     transform 0.3s ease,
@@ -77,47 +215,113 @@
     border-color 0.3s ease;
 }
 
+
+/* ========================================
+   CARD SHINE
+======================================== */
+
+.overview-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -130%;
+
+  width: 65%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.10),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+
+.overview-card:hover::before {
+  left: 140%;
+}
+
+
 .overview-card:hover {
   transform: translateY(-6px);
 
-  border-color: #c4b5fd;
+  border-color: rgba(212, 175, 55, 0.45);
 
   box-shadow:
-    0 15px 35px rgba(76, 29, 149, 0.08);
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(212, 175, 55, 0.07);
 }
+
+
+/* ========================================
+   OVERVIEW ICON
+======================================== */
 
 .overview-icon {
   width: 48px;
+
   height: 48px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   margin-bottom: 22px;
 
   border-radius: 12px;
 
-  background: #ede9fe;
+  background:
+    linear-gradient(
+      135deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #b8891f
+    );
 
-  color: #6d28d9;
+  color: #080808;
 
   font-size: 18px;
+
   font-weight: 700;
+
+  box-shadow:
+    0 0 18px rgba(212, 175, 55, 0.12);
 }
+
+
+/* ========================================
+   OVERVIEW CONTENT
+======================================== */
 
 .overview-card h3 {
   margin: 0 0 12px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 20px;
 }
 
+
 .overview-card p {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
 
@@ -125,47 +329,57 @@
 }
 
 
-/* ================================
+/* ========================================
    PUBLISHERS
-================================ */
+======================================== */
 
 .publishers-section {
   margin-bottom: 75px;
 }
 
+
 .publisher-heading {
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
+
   gap: 50px;
 
   margin-bottom: 35px;
 }
 
+
 .publisher-heading h3 {
   margin: 0;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 30px;
+
   line-height: 1.3;
 }
+
 
 .publisher-intro {
   max-width: 420px;
 
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
+
   line-height: 1.7;
 
   text-align: right;
 }
 
 
-/* Publisher Showcase */
+/* ========================================
+   PUBLISHER SHOWCASE
+======================================== */
 
 .publisher-showcase {
   display: grid;
@@ -176,23 +390,41 @@
 }
 
 
+/* ========================================
+   PUBLISHER ITEM
+======================================== */
+
 .publisher-item {
+  position: relative;
+
   min-height: 92px;
 
   display: flex;
+
   align-items: center;
 
   gap: 20px;
 
   padding: 20px 24px;
 
-  border-left: 3px solid #8b5cf6;
+  border-left: 3px solid #a8892a;
 
-  border-top: 1px solid #eeeef2;
-  border-right: 1px solid #eeeef2;
-  border-bottom: 1px solid #eeeef2;
+  border-top: 1px solid #2a2a2a;
 
-  background: #ffffff;
+  border-right: 1px solid #2a2a2a;
+
+  border-bottom: 1px solid #2a2a2a;
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #101010
+    );
+
+  overflow: hidden;
 
   transition:
     transform 0.25s ease,
@@ -200,67 +432,134 @@
     box-shadow 0.25s ease;
 }
 
-.publisher-item:hover {
-  transform: translateX(4px);
 
-  border-left-color: #6d28d9;
+/* ========================================
+   PUBLISHER SHINE
+======================================== */
 
-  box-shadow:
-    0 8px 25px rgba(76, 29, 149, 0.07);
+.publisher-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.07),
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
 }
 
 
-/* Publisher Mark */
+.publisher-item:hover::before {
+  left: 140%;
+}
+
+
+.publisher-item:hover {
+  transform: translateX(5px);
+
+  border-left-color: #d4af37;
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(212, 175, 55, 0.06);
+}
+
+
+/* ========================================
+   PUBLISHER MARK
+======================================== */
 
 .publisher-mark {
   width: 52px;
+
   height: 52px;
 
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 12px;
 
-  background: #f3f0ff;
+  background:
+    linear-gradient(
+      135deg,
+      #9f781c,
+      #d4af37,
+      #f5d76e,
+      #b8891f
+    );
 
-  color: #6d28d9;
+  color: #080808;
 
   font-size: 15px;
+
   font-weight: 700;
 
   letter-spacing: 0.5px;
+
+  box-shadow:
+    0 0 15px rgba(212, 175, 55, 0.10);
 }
 
 
-/* Publisher Information */
+/* ========================================
+   PUBLISHER INFORMATION
+======================================== */
+
+.publisher-info {
+  position: relative;
+
+  z-index: 1;
+}
+
 
 .publisher-info h4 {
   margin: 0 0 5px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 16px;
 
   line-height: 1.4;
 }
 
+
 .publisher-info p {
   margin: 0;
 
-  color: #8a8f9b;
+  color: #8f8f8f;
 
   font-size: 12px;
 }
 
 
-/* ================================
+/* ========================================
    RESEARCH THEMES
-================================ */
+======================================== */
 
 .publication-themes {
+  position: relative;
+
   padding: 40px;
 
   display: grid;
@@ -273,36 +572,115 @@
 
   border-radius: 20px;
 
-  background: #172554;
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(212, 175, 55, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #181818,
+      #0d0d0d
+    );
+
+  border: 1px solid rgba(212, 175, 55, 0.30);
 
   margin-bottom: 35px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.40);
+
+  overflow: hidden;
 }
 
-.themes-content .section-label {
-  color: #c4b5fd;
+
+/* ========================================
+   RESEARCH THEME SHINE
+======================================== */
+
+.publication-themes::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.9s ease;
+
+  pointer-events: none;
 }
+
+
+.publication-themes:hover::before {
+  left: 140%;
+}
+
+
+/* ========================================
+   THEMES CONTENT
+======================================== */
+
+.themes-content {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.themes-content .section-label {
+  color: #e5c76b;
+}
+
 
 .themes-content h3 {
   margin: 0 0 15px;
 
-  color: #ffffff;
+  color: #f5f5f5;
 
   font-size: 27px;
 
   line-height: 1.3;
 }
 
+
 .themes-content p:last-child {
   margin: 0;
 
-  color: #cbd5e1;
+  color: #a3a3a3;
 
   font-size: 14px;
 
   line-height: 1.75;
 }
 
+
+/* ========================================
+   THEME TAGS
+======================================== */
+
 .theme-tags {
+  position: relative;
+
+  z-index: 1;
+
   display: flex;
 
   flex-wrap: wrap;
@@ -310,32 +688,85 @@
   gap: 12px;
 }
 
+
 .theme-tags span {
+  position: relative;
+
   padding: 11px 16px;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.30);
 
   border-radius: 30px;
 
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    rgba(212, 175, 55, 0.06);
 
-  color: #ffffff;
+  color: #e5c76b;
 
   font-size: 13px;
 
   transition: 0.3s ease;
+
+  overflow: hidden;
 }
+
+
+/* Tag shine */
+
+.theme-tags span::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 255, 255, 0.16),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.5s ease;
+}
+
+
+.theme-tags span:hover::before {
+  left: 140%;
+}
+
 
 .theme-tags span:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background:
+    rgba(212, 175, 55, 0.12);
+
+  border-color: #d4af37;
+
+  color: #fff0a0;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 18px rgba(212, 175, 55, 0.08);
 }
 
 
-/* ================================
+/* ========================================
    PUBLICATION NOTE
-================================ */
+======================================== */
 
 .publication-note {
+  position: relative;
+
   padding: 25px 30px;
 
   display: flex;
@@ -344,45 +775,107 @@
 
   gap: 20px;
 
-  border: 1px dashed #c4b5fd;
+  border: 1px dashed rgba(212, 175, 55, 0.45);
 
   border-radius: 14px;
 
-  background: #faf9ff;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #101010
+    );
+
+  overflow: hidden;
 }
+
+
+/* ========================================
+   NOTE SHINE
+======================================== */
+
+.publication-note::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 60%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255, 240, 160, 0.06),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+}
+
+
+.publication-note:hover::before {
+  left: 140%;
+}
+
+
+/* ========================================
+   NOTE ICON
+======================================== */
 
 .note-icon {
   min-width: 45px;
+
   height: 45px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
 
-  background: #ede9fe;
+  background:
+    linear-gradient(
+      135deg,
+      #9f781c,
+      #d4af37,
+      #fff0a0,
+      #b8891f
+    );
 
-  color: #6d28d9;
+  color: #080808;
 
   font-size: 22px;
 
   font-weight: 500;
+
+  box-shadow:
+    0 0 18px rgba(212, 175, 55, 0.12);
 }
+
 
 .publication-note h3 {
   margin: 0 0 7px;
 
-  color: #172554;
+  color: #f5f5f5;
 
   font-size: 18px;
 }
 
+
 .publication-note p {
   margin: 0;
 
-  color: #6b7280;
+  color: #a3a3a3;
 
   font-size: 14px;
 
@@ -390,9 +883,9 @@
 }
 
 
-/* ================================
+/* ========================================
    TABLET
-================================ */
+======================================== */
 
 @media (max-width: 1000px) {
 
@@ -400,19 +893,22 @@
     grid-template-columns: 1fr;
   }
 
-  .publisher-list {
+
+  .publisher-showcase {
     grid-template-columns: repeat(2, 1fr);
   }
+
 
   .publication-themes {
     grid-template-columns: 1fr;
   }
+
 }
 
 
-/* ================================
+/* ========================================
    MOBILE
-================================ */
+======================================== */
 
 @media (max-width: 600px) {
 
@@ -420,25 +916,119 @@
     padding: 80px 6%;
   }
 
+
   .section-heading h2 {
     font-size: 35px;
   }
 
-  .publisher-list {
+
+  .section-description {
+    font-size: 15px;
+  }
+
+
+  .publisher-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+
+  .publisher-heading h3 {
+    font-size: 26px;
+  }
+
+
+  .publisher-intro {
+    max-width: 100%;
+
+    text-align: left;
+
+    font-size: 13px;
+  }
+
+
+  .publisher-showcase {
     grid-template-columns: 1fr;
   }
 
+
+  .publisher-item {
+    padding: 18px;
+  }
+
+
+  .publisher-mark {
+    width: 46px;
+
+    height: 46px;
+
+    font-size: 13px;
+  }
+
+
+  .publisher-info h4 {
+    font-size: 15px;
+  }
+
+
   .publication-themes {
     padding: 30px 24px;
+
+    gap: 30px;
   }
+
 
   .themes-content h3 {
     font-size: 23px;
   }
 
+
+  .theme-tags {
+    gap: 9px;
+  }
+
+
+  .theme-tags span {
+    font-size: 12px;
+
+    padding: 9px 14px;
+  }
+
+
   .publication-note {
     align-items: flex-start;
 
     padding: 22px;
+
+    gap: 15px;
   }
+
+
+  .publication-note h3 {
+    font-size: 17px;
+  }
+
+
+  .publication-note p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .publications-section::before,
+  .section-label,
+  .overview-icon {
+    animation: none;
+  }
+
 }
